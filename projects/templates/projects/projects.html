@@ -3,12 +3,39 @@
     {% block content %}
     <h1>Projects page</h1>
     <hr>
-    <p>Documentation and examples for opting images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.</p>
+    <p>My name is : {{name}} </p>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Description</td>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            {% for project in projectList %}
+            <tr>
+                <td>{{project.id}}</td>
+                <td>{{project.title}} 
+                    {% if project.topRated %} 
+
+                        <strong style="color: red;">TOP RATED</strong>
+
+                    {% endif %}</td>
+                <td>{{project.description}}</td>
+
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    
 
 
-    <hr>
-    <p>Documentation and examples for opting images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.</p>
-    <hr>
-    <p>Documentation and examples for opting images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.</p>
+   
+    
 
     {% endblock content %}
