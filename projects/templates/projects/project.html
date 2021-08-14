@@ -3,29 +3,19 @@
    {% block content %}
    <h3> Project page</h3>
    <hr>
-   <table>
-       <thead>
-           <tr>
-               <td>ID</td>
-               <td>Title</td>
-               <td>Description</td>
-           </tr>
-        </thead>
-        <tbody>
-            
-             
-            <tr>
-                <td>{{project.id}}</td>
-                <td>{{project.title}}</td>
-                <td>{{project.description}}</td>
+   {{project.title}}
+   <hr>
+    {% for tag in tags %}
+        <span style="border:1px solid gray;padding:0.5em ;">{{tag}}</span>
+    {% endfor %}
+    <br>
+    <h4 style="padding-right: 2px;">Reviews...</h4>
+    {% for review in reviews %}
+        
+            {{review.body}}
+            <br>
+        
+    {% endfor %}
 
-            </tr>
-
-            
-            
-            
-        </tbody>
-
-    </table>
    
 {% endblock content %}
