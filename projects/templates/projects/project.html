@@ -6,7 +6,7 @@
    {{project.title}}
    <hr>
     {% for tag in tags %}
-        <span style="border:1px solid gray;padding:0.5em ;">{{tag}}</span>
+        <span style="border:1px solid gray;padding:0.5em ;">{{tag.name}}</span>
     {% endfor %}
     <br>
     <h4 style="padding-right: 2px;">Reviews...</h4>
@@ -16,6 +16,6 @@
             <br>
         
     {% endfor %}
-
-   
+    <p><a href="{% url 'update-project' project.id %}"> Edit</a></p>
+    <p><a href="{% url 'delete-project' project.id %}"> Delete</a></p>
 {% endblock content %}

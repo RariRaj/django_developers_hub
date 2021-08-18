@@ -1,0 +1,11 @@
+
+{% block content %}
+<p>delete page</p>
+<form method='POST' action=''>
+    {% csrf_token %}
+    <div>Are you want to delete {{project.title}}?</div>
+    <button btn-primary><a href="/">Go Back </a></button>
+    <input type="submit" value="Delete">
+
+</form>
+{% endblock content %}
